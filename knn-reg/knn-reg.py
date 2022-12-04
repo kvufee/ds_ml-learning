@@ -34,10 +34,12 @@ class KNNRegressor:
         return predict_data
 
 
-# bebra = KNNRegressor(k_nb = 5)
-# bebra.fit(X_train, y_train)
-# bebra.predict(X_test)
 
-# bobik = KNeighborsRegressor(n_neighbors = 5)
-# bobik.fit(X_train, y_train)
-# bobik.predict(X_test)
+bebra = KNNRegressor(k_nb = 5)
+bebra.fit(X_train, y_train)
+print(bebra.predict(X_test))
+
+
+bobik = KNeighborsRegressor(n_neighbors = 5)
+bobik.fit(X_train, y_train)
+print(bobik.predict(X_test))
