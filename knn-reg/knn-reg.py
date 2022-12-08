@@ -1,6 +1,6 @@
 from typing import List
-import numpy as np
 
+import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.datasets import make_regression
 from sklearn.neighbors import KNeighborsRegressor
