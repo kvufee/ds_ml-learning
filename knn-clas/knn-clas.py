@@ -1,15 +1,10 @@
-import numpy as np
 from typing import List
+import numpy as np
 from collections import Counter
 
 from sklearn.model_selection import train_test_split
 from sklearn.datasets import make_classification
 from sklearn.neighbors import KNeighborsClassifier
-
-
-X, y = make_classification()
-
-X_train, X_test, y_train, y_test = train_test_split(X, y)
 
 
 class KNNClassifier:
@@ -21,7 +16,7 @@ class KNNClassifier:
         self.y = y
 
     def predict(self, data:List[float]) -> List[int]:
-        predict_data = []
+        predictions_list = []
         neighbors = np.array([])
         
         for item in data:
@@ -31,19 +26,20 @@ class KNNClassifier:
             neighbors = self.y[k_indices]
 
             values = Counter(neighbors)
-            amount = dict(values)
     
-            predict_data.append(sorted(amount.items(), key=lambda x: x[1], reverse=True)[0][0])
+            predictions_list.append(sorted(values.items(), key=lambda x: x[1], reverse=True)[0][0])
         
-        return predict_data
+        return predictions_list
 
 
-# my class and function
-bebra = KNNClassifier(k_nb = 5)
-bebra.fit(X_train, y_train)
-print(bebra.predict(X_test))
+if __name__ == "__main__":
+    X, y = make_classification()
+    X_train, X_test, y_train, y_test = train_test_split(X, y)
 
-#imported function
-bobik = KNeighborsClassifier()
-bobik.fit(X_train, y_train)
-print(bobik.predict(X_test))
+    my_classifier = KNNClassifier(k_nb = 5)
+    my_classifier.fit(X_train, y_train)
+    print(my_classifier.predict(X_test))
+
+    imported_classifier = KNeighborsClassifier()
+    imported_classifier.fit(X_train, y_train)
+    print(imported_classifier.predict(X_test))
