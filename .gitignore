@@ -1,3 +1,8 @@
 .ipynb_checkpoints
 anaconda.sh
 HowToDatafame.ipynb
+vk-internship-ds-task2/catboost_info/catboost_training.json
+vk-internship-ds-task2/catboost_info/learn/events.out.tfevents
+vk-internship-ds-task2/catboost_info/learn_error.tsv
+vk-internship-ds-task2/catboost_info/tmp/cat_feature_index.aa4daaf5-85d17317-4acf3ac6-3c415853.tmp
+vk-internship-ds-task2/catboost_info/time_left.tsv
