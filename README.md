@@ -1,1 +1,1 @@
-Repo with classic ML written from scratch and ML related tasks
+Classic ML from scratch, EDA, VK internship profile task and ML related tasks
